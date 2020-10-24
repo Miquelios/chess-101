@@ -11,7 +11,9 @@ public class Knight : Piece
 
         foreach (Tile tile in tiles)
         {
-            if (checkTiles(this.originalPosition, tile.position))
+            if (checkTiles(this.originalPosition, tile.position)
+                && (tile.occupant == null
+                || (tile.occupant != null && tile.occupant.color != this.color)))
             {
                 possibleTiles.Add(tile);
             }
